@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DealPilot AI — your buyer's agent for car shopping</title>
+<meta name="description" content="Tell DealPilot what you're after. It scans dealer inventory in your radius, puts every listing on the same spec sheet, and tells you which one is actually priced to move." />
+
+<meta property="og:title" content="DealPilot AI" />
+<meta property="og:description" content="A buyer's agent for car shopping, not another listings site." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/negotiation.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,0 100,86 50,66 0,86' fill='%23FFB020'/></svg>" />
+</head>
+<body>
+
+<!-- Data-source banner. Visible and unmissable whenever listings are NOT live.
+     This exists because a demo listing must never be mistaken for a real car. -->
+<div id="source-banner" class="dp-databanner" hidden></div>
+
+<header class="dp-nav">
+  <button class="dp-brand" data-action="home">
+    <span class="dp-brand-mark" aria-hidden="true"></span>
+    <span class="dp-display dp-brand-name">DealPilot</span>
+    <span class="dp-mono dp-brand-tag">AI</span>
+  </button>
+  <nav class="dp-nav-right" id="nav-right"></nav>
+</header>
+
+<main id="screen" aria-live="polite"></main>
+
+<footer class="dp-footer">
+  <div class="dp-footer-inner">
+    <span class="dp-mono">DEALPILOT AI · v1.0</span>
+    <span class="dp-mono dp-muted" id="footer-source"></span>
+  </div>
+</footer>
+
+<div id="modal-root"></div>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

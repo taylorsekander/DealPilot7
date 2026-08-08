@@ -1,0 +1,15 @@
+# Cloudflare Pages security + caching headers.
+# Netlify reads netlify.toml instead; this file is ignored there, and vice versa.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self), microphone=(), camera=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# JS is unversioned, so don't let browsers pin a stale build.
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate

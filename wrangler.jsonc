@@ -1,0 +1,28 @@
+{
+  // ==========================================================================
+  // Cloudflare Workers configuration (Workers Static Assets).
+  //
+  // "main" is what was missing before: without it, `wrangler deploy` had no
+  // entry point and fell back to uploading the whole repo as loose files, which
+  // is why /api/* returned 404 and the app quietly used sample data.
+  //
+  // Secrets are NOT listed here — that would put them in git. Set them under
+  // Workers & Pages -> your Worker -> Settings -> Variables and Secrets.
+  // ==========================================================================
+  "name": "dealpilot",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-01",
+
+  "assets": {
+    // Served for every non-/api/* request. .assetsignore keeps source-only
+    // directories (shared/, src/, .git/) out of the public bundle.
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+
+  "observability": {
+    // Turns on request logs. Workers -> your Worker -> Logs shows live errors,
+    // which is where an auto.dev failure will appear.
+    "enabled": true
+  }
+}
