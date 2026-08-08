@@ -1,0 +1,14 @@
+# Files NOT to publish as static assets.
+# Without this the whole repo — including .git — is served publicly.
+.git/**
+.wrangler/**
+node_modules/**
+src/**
+shared/**
+functions/**
+netlify/**
+*.jsonc
+*.toml
+.env*
+.assetsignore
+README.md
